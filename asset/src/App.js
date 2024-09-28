@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ethers } from 'ethers';
+import { ethers } from 'ethers'; // Import ethers
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 
@@ -29,7 +29,7 @@ const App = () => {
   };
 
   const isValidAddress = (address) => {
-    return ethers.utils.isAddress(address);
+    return ethers.getAddress(address); // Use ethers.getAddress() instead of ethers.utils.isAddress()
   };
 
   const transferVoltaETH = async () => {
@@ -46,12 +46,12 @@ const App = () => {
     setIsLoading(true);
 
     try {
-      const amountInWei = ethers.utils.parseEther(ethAmount);
+      const amountInWei = ethers.parseUnits(ethAmount, 18); // Updated to use ethers.parseUnits()
 
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const signer = provider.getSigner();
+      const provider = new ethers.BrowserProvider(window.ethereum); // Updated to use ethers.BrowserProvider
+      const signer = await provider.getSigner();
 
-      const contract = new ethers.Contract(contractAddress, contractABI, signer);
+      const contract = new ethers.Contract(contractAddress, contractABI, signer); // Updated to use ethers.Contract
 
       const transaction = await contract.transferEth(recipientAddress, amountInWei, { value: amountInWei });
       await transaction.wait();
