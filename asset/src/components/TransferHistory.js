@@ -32,8 +32,8 @@ const TransferHistory = () => {
             ) : (
                 <p className="text-gray-200">No transfers found.</p>
             )}
-            <div className="p-3 border-2 w-[10%] my-3 rounded-lg flex items-center hover:border-black">
-                <Link className="text-white flex items-center hover:text-black" to="/">
+            <div className=" flex items-center ">
+                <Link className="border-2 rounded-lg p-3  w-[10%] my-3  hover:border-black text-white flex items-center hover:text-black" to="/">
                     <IoArrowBackCircleOutline className="text-2xl mr-2" />
                     <div>Go Back</div>
                 </Link>
