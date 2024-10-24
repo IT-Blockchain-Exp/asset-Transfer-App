@@ -8,6 +8,7 @@ dist/
 build/
 out/
 artifacts/
+cache/
 
 # Hardhat files
 .cache/
