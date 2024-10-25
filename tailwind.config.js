@@ -5,10 +5,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'crypto-gradient': 'linear-gradient(to right, #1E3A8A, #6B21A8, #4F46E5)', // Custom gradient
+      colors: { // Correct key is 'colors'
+        customgray: "#333333", // Light gray
+        customdark: "#1A1A1A", // Custom dark color for gradient or background
       },
     },
   },
   plugins: [],
 }
+  

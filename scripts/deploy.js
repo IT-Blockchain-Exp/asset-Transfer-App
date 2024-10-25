@@ -1,15 +1,12 @@
+const hre = require("hardhat");
+
 async function main() {
-  const [deployer] = await ethers.getSigners();
-  
-  console.log("Deploying contracts with the account:", deployer.address);
-
-  const balance = await deployer.getBalance();
-  console.log("Account balance:", balance.toString());
-
-  const TransferVoltaCoin = await ethers.getContractFactory("TransferVoltaCoin");
-  const contract = await TransferVoltaCoin.deploy();
-
-  console.log("Contract address:", contract.address);
+    const TransferSepoliaETH = await hre.ethers.getContractFactory("TransferSepoliaETH");
+    const transferSepoliaETH = await TransferSepoliaETH.deploy();
+    
+    await transferSepoliaETH.deployed();
+    
+    console.log("TransferSepoliaETH deployed to:", transferSepoliaETH.address);
 }
 
 main()

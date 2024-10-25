@@ -1,11 +1,15 @@
+require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-ethers");
 
+const API_URL = "https://volta-rpc.energyweb.org/"; 
+const PRIVATE_KEY = "c617a366800a3ee2ab579afc7cc9f97d193fe58a20917346293e4351d442b0e9"; 
+
 module.exports = {
-  solidity: "0.8.0",
+  solidity: "0.8.0",  // Specify the Solidity version
   networks: {
     volta: {
-      url: "https://volta-rpc.energyweb.org",
-      accounts: ["b9bf7aed5350cd6e079c6f757a9f69038614f96973408f6a16db91464d4c52fe"] // Use your actual private key securely
+      url: API_URL || "https://volta-rpc.energyweb.org/",
+      accounts: [`0x${PRIVATE_KEY}`]
     }
   }
 };

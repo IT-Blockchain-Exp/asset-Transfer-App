@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Adjust gradient application to avoid overwhelming UI */
+/* Apply custom dark background */
 body {
-  background: linear-gradient(to right, #1E3A8A, #6B21A8, #4F46E5);
+  @apply bg-customdark;
 }
