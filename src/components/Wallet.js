@@ -123,14 +123,14 @@ const Wallet = ({ account, setAccount }) => {
                                 />
                                 <input
                                     type="text"
-                                    placeholder="Amount in ETH"
+                                    placeholder="Amount in Volta"
                                     className="w-full border bg-transparent border-gray-300 rounded-lg p-3 mb-6 text-white"
                                     value={ethAmount}
                                     onChange={(e) => setEthAmount(e.target.value)}
                                 />
                                 <div className="flex flex-col items-center space-y-4">
                                     <button className="w-[250px] bg-green-500 text-white py-3 rounded-lg hover:bg-green-600" onClick={transferVoltaETH} disabled={isLoading}>
-                                        {isLoading ? 'Sending...' : 'Send ETH'}
+                                        {isLoading ? 'Sending...' : 'Send Volta'}
                                     </button>
                                     <button
                                         className="w-[250px] bg-gray-500 text-white py-3 rounded-lg hover:bg-gray-600"
