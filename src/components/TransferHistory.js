@@ -30,7 +30,7 @@ const TransferHistory = () => {
                     </thead>
                     <tbody>
                         {sortedTransfers.map((transfer, index) => (
-                            <tr key={index} className="bg-white bg-opacity-20">
+                            <tr key={index} className="bg-customdark">
                                 <td className="py-2 px-4 border">{transfer.from}</td>
                                 <td className="py-2 px-4 border">{transfer.to}</td>
                                 <td className="py-2 px-4 border">{transfer.amount}</td>
